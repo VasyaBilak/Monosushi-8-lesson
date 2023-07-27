@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: "rotondac", sans-serif !important;
+}
+
+@font-face {
+    font-family: "rotondac";
+    src: local("rotondac"),
+        url("app/shared/fonts/rotondac/rotondac.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "rotondac-bold";
+    src: url("app/shared/fonts/rotondac/rotondac-bold.otf");
+}
+
+html {
+    --scrollbarBG: transparent;
+    --thumbBG: #b5d8f7;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+}

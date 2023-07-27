@@ -1,0 +1,41 @@
+@import "../shared/styles/variables";
+
+.mr-20 {
+    margin-right: 50px;
+}
+
+.spacer-md {
+    margin-top: 100px;
+}
+
+.nav-link {
+    color: rgb(121, 117, 117);
+    border-top: 2px solid rgb(121, 117, 117);
+    border-right: 1px solid rgba(121, 117, 117, 0.366);
+    border-radius: 0px;
+    padding: 20px 50px;
+    transition: .35s ease;
+}
+
+.activ {
+    color: black;
+    font-weight: bold;
+    border-top: 2px solid $primary;
+    border-right: 1px solid transparent;
+}
+
+.btn-exit {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: $primary;
+    width: 100px;
+    margin: 50px auto;
+    border: 2px solid transparent;
+    transition: .35s ease;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $primary;
+    }
+}

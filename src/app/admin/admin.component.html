@@ -1,0 +1,49 @@
+<div class="spacer-md"></div>
+<div class="container-fluid">
+  <div class="d-flex align-items-start">
+    <div
+      class="nav flex-column nav-pills mr-20"
+      id="v-pills-tab"
+      role="tablist"
+      aria-orientation="vertical"
+    >
+      <button
+        class="nav-link"
+        [routerLink]="['discount']"
+        routerLinkActive="activ"
+        type="button"
+      >
+        Акції
+      </button>
+      <button
+        class="nav-link"
+        [routerLink]="['category']"
+        routerLinkActive="activ"
+        type="button"
+      >
+        Категорії
+      </button>
+      <button
+        class="nav-link"
+        [routerLink]="['product']"
+        routerLinkActive="activ"
+        type="button"
+      >
+        Товари
+      </button>
+
+      <button
+        class="nav-link"
+        [routerLink]="['order']"
+        routerLinkActive="activ"
+        type="button"
+      >
+        Замовлення
+      </button>
+      <button type="button" class="btn btn-exit">Вихід</button>
+    </div>
+    <div class="tab-content w-100" id="v-pills-tabContent">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

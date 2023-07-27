@@ -1,0 +1,92 @@
+@import "../../../shared/styles/variables";
+
+.bg-mono {
+    background-color: $primary;
+    margin-top: -35px;
+    background-image: url(../../../../assets/images/bg-monosushi-logo.svg), url(../../../../assets/images/bg-monosushi-logo.svg);
+    background-repeat: repeat;
+    background-position: 0 0,190px -52px;
+}
+
+.after-banner {
+    padding: 40px 0;
+}
+
+.after-banner-item {
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .btn {
+        display: inline-block;
+        vertical-align: bottom;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        border: none;
+        background: none;
+        -webkit-transition: .35s;
+        transition: .35s;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        padding: 16px 20px;
+        border-radius: 10px;
+        color: #252525;
+    }
+
+    .btn-secondary {
+        border: 2px solid #fff;
+        background-color: #fff;
+
+        &:focus, &:hover, &:active, &:visited {
+            background-color: transparent;
+        }
+    }
+
+    .after-banner-img {
+        max-width: 135px;
+        margin-right: 30px;
+    
+        img {
+            min-width: 75px;
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .after-banner-info {
+        text-align: center;
+        max-width: 230px;
+        color: #252525;
+
+        ::selection {
+            color: white;
+        }
+    }
+
+}
+
+.col-md-4 {
+    position: relative;
+}
+
+.after-banner div[class^="col"]+div[class^="col"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    width: 1px;
+    height: 133px;
+    background: rgba(255,255,255,.4);
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

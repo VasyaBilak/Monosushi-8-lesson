@@ -1,0 +1,20 @@
+{
+  "discounts": [
+    {
+      "id": 1,
+      "date": "12.2021",
+      "name": "рол тижня",
+      "title": "50% знижки на 'Рол тижня'",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню...",
+      "imagePath": "https://monosushi.com.ua/wp-content/uploads/2022/07/imgonline-com-ua-compressed-pa0akdpwddstmsv1-scaled-697x379.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Роли",
+      "path": "rolls",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=04c13fe3-66aa-46ce-a166-c2496aa64d5c",
+      "id": 1
+    }
+  ]
+}

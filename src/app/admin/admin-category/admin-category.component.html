@@ -1,0 +1,94 @@
+<button type="button" class="btn btn-add btn-upload" (click)="showForm()">
+  Додати категорію
+</button>
+
+<div class="row" *ngIf="addForm">
+  <div class="col-6">
+    <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+      <div class="wrapper d-flex">
+        <div class="mb-3 mt-3 me-3 col-6 inpWidth">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="*Назва"
+            formControlName="name"
+          />
+        </div>
+        <div class="mb-3 mt-3 col-6 inpWidth">
+          <input
+            type="text"
+            class="form-control"
+            id="path"
+            name="title"
+            placeholder="*Шлях"
+            formControlName="path"
+          />
+        </div>
+      </div>
+      <ng-container *ngIf="!isUploaded">
+        <div class="mb-3">
+          <input class="form-control" type="file" (change)="upload($event)" />
+          <div class="progress mb-3 mt-3">
+            <div
+              class="progress-bar progress-bar-striped"
+              role="progressbar"
+              [style.width.%]="uploadPercent"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="isUploaded">
+        <div class="uploaded-wrapper mb-3">
+          <img [src]="valueByControl('imagePath')" alt="" class="imgUpload">
+          <button type="button" class="btn btn-upload" (click)="deleteImage()">Видалити</button>
+        </div>
+      </ng-container>
+      <button
+        type="submit"
+        class="btn btn-add btn-upload"
+        [disabled]="categoryForm.invalid"
+      >
+        {{ editStatus ? "Зберегти" : "Додати" }}
+      </button>
+    </form>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td scope="col">№</td>
+      <td scope="col">Назва</td>
+      <td scope="col">Шлях</td>
+      <td scope="col">Картинка</td>
+      <td scope="col">Дії</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of adminCategories">
+      <td><span>№</span> {{ category.id }}</td>
+      <td>{{ category.name }}</td>
+      <th>{{ category.path }}</th>
+      <td>
+        <img [src]="category.imagePath" alt="" height="50px" />
+      </td>
+      <td>
+        <button class="btn-action" (click)="editCategory(category)">
+          Редагувати
+        </button>
+        <br />
+        <button
+          class="btn-action"
+          [disabled]="editStatus"
+          (click)="deleteCategory(category)"
+        >
+          Видалити
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

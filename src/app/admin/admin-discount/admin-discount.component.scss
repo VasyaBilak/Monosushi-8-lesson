@@ -1,0 +1,65 @@
+@import "../../shared/styles/variables";
+
+.btn-upload {
+    text-transform: uppercase;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid $primary;
+    transition: .35s ease;
+
+    &:hover {
+        background-color: $primary;
+        border: 2px solid transparent;
+    }
+}
+
+.btn-add {
+    width: 200px;
+}
+
+.description {
+    height: 200px;
+    .input-description {
+        height: 100%;
+        resize: none;
+    }
+}
+
+.inpWidth {
+    width: 49%;
+}
+
+.btn-action {
+    background-color: transparent;
+    border: transparent;
+    color: $primary;
+    border-bottom: 1px solid transparent;
+    transition: .35s ease-in-out;
+
+    &:hover {
+        border-bottom: 1px solid $primary;
+    }
+}
+
+.imgUpload {
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.uploaded-wrapper {
+    display: flex;
+    align-items: end;
+
+    button {
+        max-height: 50px;
+        margin-left: 3rem;
+    }
+}
+
+tbody {
+    tr {
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,285 @@
+@import "../../../shared/styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo {
+  background-color: $primary;
+  padding: 18px;
+}
+
+.nav-item {
+  margin-left: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 28px;
+    height: 30px;
+    margin: 0 auto;
+  }
+  span {
+    color: $black;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+// hover border
+.hover-line {
+  position: relative;
+  transition: 0.35s;
+  cursor: pointer;
+}
+
+.hover-line::before,
+.hover-line::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+  border-radius: 7px;
+}
+
+.hover-line::before {
+  top: 0;
+  left: 0;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.hover-line:hover::before {
+  border-top-color: $primary;
+  border-right-color: $primary;
+  transition: width 0.1s ease-out, height 0.1s ease-out 0.1s;
+}
+
+.hover-line::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.hover-line:hover::before,
+.hover-line:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.hover-line:hover::after {
+  border-bottom-color: $primary;
+  border-left-color: $primary;
+  transition: border-color 0s ease-out 0.12s, width 0.15s ease-out 0.15s,
+    height 0.25s ease-out 0.25s;
+}
+
+// burger menu
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms;
+}
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+}
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+.ham8.active .middle {
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+// burger open
+.burger__menu {
+  position: relative;
+  cursor: pointer;
+  height: 60px;
+  margin-left: 30px;
+  z-index: 2;
+
+  a {
+    svg {
+      height: 100%;
+      position: absolute;
+      z-index: 99999;
+      left: 0;
+    }
+    div {
+      width: 80px;
+    }
+  }
+}
+
+.menu__burger-list {
+  position: absolute;
+  top: 0;
+  list-style: none;
+  width: 230px;
+  padding-left: 20px;
+  border: 2px solid $primary;
+  border-radius: 5px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  background-color: #fff;
+
+  li {
+    margin-top: 20px;
+    border: 2px solid transparent;
+    padding: 5px;
+    width: 180px;
+    transition: all .3s ease;
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      div {
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      border-color: $primary;
+      border-radius: 5px;
+    }
+  }
+
+  .menu__burger-hide {
+    visibility: hidden;
+    opacity: 1;
+  }
+
+}
+
+// call
+.call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  border-radius: 5px;
+  height: 100%;
+  margin-top: 8px;
+  margin-left: 50px;
+  border: 2px solid transparent;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: #fff;
+    border: 2px solid $primary;
+  }
+
+  img {
+    height: 50%;
+  }
+}
+
+// header-info
+.header-info {
+  margin-left: 50px;
+  a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// header-user
+.header-user {
+  padding: 10px;
+  margin-left: 50px;
+  height: 100%;
+}
+
+// header-basket
+.header-basket {
+  background-color: $primary;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  i {
+    position: relative;
+    span {
+      position: absolute;
+      top: 0;
+      right: -7px;
+      line-height: 1em;
+      font-size: 14px;
+      padding-top: 6px;
+      background-color: #fff;
+      -webkit-transition: .35s;
+      transition: .35s;
+      min-width: 26px;
+      max-width: 36px;
+      height: 26px;
+      border-radius: 100%;
+      text-align: center;
+    }
+  }
+
+  .basket-price {
+    margin-left: 20px;
+  }
+  
+}
