@@ -16,5 +16,17 @@
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=04c13fe3-66aa-46ce-a166-c2496aa64d5c",
       "id": 1
     }
+  ],
+  "products": [
+    {
+      "category": "Роли",
+      "name": "Філадельфія з лососем",
+      "ingredients": "Рис, крем, сир, огірок, лосось",
+      "weight": "280 г",
+      "price": "174 грн",
+      "path": "rolls",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=edd6870a-7623-45e4-a373-8a8145788879",
+      "id": 1
+    }
   ]
 }

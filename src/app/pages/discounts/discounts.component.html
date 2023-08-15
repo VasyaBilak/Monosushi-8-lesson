@@ -1,3 +1,25 @@
 <section>
-    <p>Акції</p>
+  <p>Акції</p>
 </section>
+  <div class="mb-3 d-flex justify-content-center">
+    <ng-container *ngIf="userDiscounts.length > 0">
+      <div class="col-4" *ngFor="let discount of userDiscounts">
+        <div class="discount-card w-100">
+          <div class="img-wrapper__card">
+            <img [src]="discount.imagePath" class="card-img-top" alt="..." />
+          </div>
+          <h3 class="discount-name mt-3">{{ discount.name }}</h3>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="userDiscounts.length === 0">
+      <div class="card text-center">
+        <div class="card-header"></div>
+        <div class="card-body">
+          <h1 class="text-center">Discounts not added yet</h1>
+        </div>
+        <div class="card-footer text-muted"></div>
+      </div>
+    </ng-container>
+  </div>
+

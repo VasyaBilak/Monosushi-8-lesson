@@ -25,6 +25,7 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { CategoriesMenuComponent } from './pages/home/categories-menu/categories-menu.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AdminProductComponent,
     AdminDiscountComponent,
     AdminOrderComponent,
+    CategoriesMenuComponent,
   ],
   imports: [
     BrowserModule,

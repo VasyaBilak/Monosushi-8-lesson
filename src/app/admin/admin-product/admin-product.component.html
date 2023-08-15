@@ -1,1 +1,142 @@
-<p>admin-product works!</p>
+<button type="button" class="btn btn-add btn-upload" (click)="showForm()">
+  Додати продукт
+</button>
+
+<div class="row" *ngIf="addForm">
+  <div class="col-6">
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+      <div class="mb-3 mt-3 col-12">
+        <input
+          type="text"
+          class="form-control"
+          id="category"
+          name="category"
+          placeholder="*Категорія"
+          formControlName="category"
+        />
+      </div>
+      <div class="wrapper d-flex">
+        <div class="mb-3 mt-3 me-3 col-6 inpWidth">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="*Назва"
+            formControlName="name"
+          />
+        </div>
+        <div class="mb-3 mt-3 col-6 inpWidth">
+          <input
+            type="text"
+            class="form-control"
+            id="path"
+            name="path"
+            placeholder="*Шлях"
+            formControlName="path"
+          />
+        </div>
+      </div>
+      <div class="mb-3 mt-3 col-12">
+        <input
+          type="text"
+          class="form-control"
+          id="ingredients"
+          name="ingredients"
+          placeholder="*Інгредієнти"
+          formControlName="ingredients"
+        />
+      </div>
+      <div class="wrapper d-flex">
+        <div class="mb-3 mt-3 me-3 col-6 inpWidth">
+          <input
+            type="text"
+            class="form-control"
+            id="weight"
+            name="weight"
+            placeholder="*Вага"
+            formControlName="weight"
+          />
+        </div>
+        <div class="mb-3 mt-3 col-6 inpWidth">
+          <input
+            type="text"
+            class="form-control"
+            id="price"
+            name="price"
+            placeholder="*Ціна"
+            formControlName="price"
+          />
+        </div>
+      </div>
+      <ng-container *ngIf="!isUploaded">
+        <div class="mb-3">
+          <input class="form-control" type="file" (change)="upload($event)" />
+          <div class="progress mb-3 mt-3">
+            <div
+              class="progress-bar progress-bar-striped"
+              role="progressbar"
+              [style.width.%]="uploadPercent"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="isUploaded">
+        <div class="uploaded-wrapper mb-3">
+          <img [src]="valueByControl('imagePath')" alt="" class="imgUpload" />
+          <button type="button" class="btn btn-upload" (click)="deleteImage()">
+            Видалити
+          </button>
+        </div>
+      </ng-container>
+      <button
+        type="submit"
+        class="btn btn-add btn-upload"
+        [disabled]="productForm.invalid"
+      >
+        {{ editStatus ? "Зберегти" : "Додати" }}
+      </button>
+    </form>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td scope="col">№</td>
+      <td scope="col">Категорія</td>
+      <td scope="col">Назва</td>
+      <td scope="col">Інгредієнти</td>
+      <td scope="col">Вага</td>
+      <td scope="col">Ціна</td>
+      <td scope="col">Картинка</td>
+      <td scope="col">Дії</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of adminProducts">
+      <td>№ {{ product.id }}</td>
+      <td>{{ product.category }}</td>
+      <th>{{ product.name }}</th>
+      <td>{{ product.ingredients }}</td>
+      <td>{{ product.weight }}</td>
+      <td>{{ product.price }}</td>
+      <td><img [src]="product.imagePath" alt="" height="50px" /></td>
+      <td>
+        <button class="btn-action" (click)="editProduct(product)">
+          Редагувати
+        </button>
+        <br />
+        <button
+          class="btn-action"
+          [disabled]="editStatus"
+          (click)="deleteProduct(product)"
+        >
+          Видалити
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
