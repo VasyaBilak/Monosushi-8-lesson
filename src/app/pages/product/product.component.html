@@ -1,4 +1,44 @@
-<section>
-    <p>Продукти</p>
+<section class="mt-3">
+    <div class="container">
+        <div id="shop-ajax-wrapper">
+            <div class="row product-row filters-row isotop-row">
+                <div class="col-sm-6 col-lg-4 col-xl-3 mt-3 mb-3 mr-110" *ngFor="let product of userProducts">
+                    <div class="product js-product my-border hover-line" [routerLink]="[ '/product-category/'+product.category.path, product.id ]">
+                        <div class="product_image-wrap">
+                            <a href="#" class="product_image">
+                                <img class="img img-default imgLoaded" [src]="product.imagePath" [alt]="product.name">
+                            </a>
+                        </div>
+                        <div class="product_title-wrap">
+                            <div class="product_title title h5 m-auto">
+                                <a href="#"> {{ product.name }} </a>
+                            </div>
+                        </div>
+                        <div class="product_desc">
+                            <p> {{ product.ingredients }} </p>
+                            <div class="product_size">
+                                <span class="size"> {{ product.weight }} </span> 
+                            </div>
+                        </div>
+                        <div class="product_controls">
+                            <div class="product_price-wrap">
+                                <div class="product_price">
+                                    <b class="price"> {{ product.price }} </b> 
+                                </div>
+                                <div class="product_price-old hidden">
+                                    <b class="price"> {{ product.price }} </b> 
+                                </div>
+                            </div>
+                            <div class="thumb-input-number">
+                                <button type="button" class="decrement">-</button>
+                                <input value="1" readonly class="product-qty" tabindex="-1" max="999">
+                                <button type="button" class="increment">+</button>
+                            </div>
+                            <button class="btn btn-small btn-primary order-btn add-to-cart-btn">Замовити</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<app-categories-menu></app-categories-menu>

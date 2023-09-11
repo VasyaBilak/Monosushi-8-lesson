@@ -1,0 +1,170 @@
+ol, ul {
+    box-sizing: border-box;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: .35s;
+    transition: .35s;
+    cursor: pointer;
+
+    &:focus, &:hover, &:active, &:visited {
+        outline: none;
+    }
+}
+
+.spacer-sm {
+    height: 40px;
+}
+
+.spacer-md {
+    height: 60px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1750px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .breadcrumbs {
+        margin-bottom: 0;
+        margin-left: 4%;
+        margin-top: 25px;
+        font-size: 12px;
+        line-height: 13px;
+
+        li {
+            transition: none;
+            position: relative;
+            display: inline-block;
+            -webkit-transition: .35s;
+            transition: .35s;
+            text-transform: capitalize;
+
+            &::after {
+                border-color: #5a5a5a;
+                content: "";
+                position: relative;
+                display: inline-block;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: #5a5a5a;
+                margin: 0 10px 2px;
+            }
+
+            span {
+                color: #5a5a5a;
+            }
+
+            .active {
+                text-decoration: none;
+                cursor: context-menu;
+            }
+
+            &:last-child::after{
+                background: transparent;
+                cursor: context-menu;
+            }
+        }
+    }
+
+    .row {
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+
+        .popup-container.size-1.bg-mono, .bg-mono {
+            background-color: #b5d8f7;
+            background-image: url(https://monosushi.com.ua/wp-content/themes/monosushi/img/bg-monosushi-logo.svg) , url(https://monosushi.com.ua/wp-content/themes/monosushi/img/bg-monosushi-logo.svg);
+            background-repeat: repeat;
+            background-position: 0 0 , 190px -52px;
+        }
+
+        .mini-banner {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            max-width: 100%;
+            width: 10000px;
+            height: 180px;
+            z-index: 2;
+            text-align: center;
+            border-radius: 10px;
+
+            .center-info {
+                text-align: center;
+                margin: 0 auto;
+                max-width: 550px;
+
+                .title {
+                    position: relative;
+                    display: inline-block;
+                    padding-top: 10px;
+                    color: #252525;
+                    font-weight: bold;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 5px;
+                        background: #b5d8f7;
+                        background: #252525;
+                    }
+                }
+
+                .text-cut-2 {
+                    overflow: visible;
+                }
+            }
+        }
+
+        .simple-page {
+            position: relative;
+
+            ul {
+                color: #5a5a5a;
+                li {
+                    position: relative;
+                    font-size: 18px;
+                    line-height: 1.47em;
+                    padding-left: 24px;
+
+                    &::before {
+                        width: 11px;
+                        height: 11px;
+                        position: absolute;
+                        left: 0;
+                        top: 9px;
+                        border-radius: 100%;
+                        background: #b5d8f7;
+                        content: "";
+                    }
+
+                    &::after {
+                        width: 9px;
+                        height: 9px;
+                        position: absolute;
+                        left: 1px;
+                        top: 10px;
+                        border-radius: 100%;
+                        border: 2px solid #fff;
+                        background: transparent;
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+}

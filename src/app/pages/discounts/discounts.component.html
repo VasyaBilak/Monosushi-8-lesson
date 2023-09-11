@@ -4,11 +4,13 @@
   <div class="mb-3 d-flex justify-content-center">
     <ng-container *ngIf="userDiscounts.length > 0">
       <div class="col-4" *ngFor="let discount of userDiscounts">
-        <div class="discount-card w-100">
+        <div class="discount-card w-100" [routerLink]="[ '/discount/', discount.id ]">
           <div class="img-wrapper__card">
             <img [src]="discount.imagePath" class="card-img-top" alt="..." />
           </div>
           <h3 class="discount-name mt-3">{{ discount.name }}</h3>
+          <span></span>
+          <button class="discount-btn">Дізнатись більше</button>
         </div>
       </div>
     </ng-container>

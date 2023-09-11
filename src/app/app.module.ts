@@ -26,6 +26,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { CategoriesMenuComponent } from './pages/home/categories-menu/categories-menu.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { DiscountInfoComponent } from './pages/discount-info/discount-info.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { CategoriesMenuComponent } from './pages/home/categories-menu/categories
     AdminDiscountComponent,
     AdminOrderComponent,
     CategoriesMenuComponent,
+    ProductInfoComponent,
+    DiscountInfoComponent,
   ],
   imports: [
     BrowserModule,

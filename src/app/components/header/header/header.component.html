@@ -135,13 +135,13 @@
         </li>
 
       </ul>
-      <div class="header-basket">
+      <div class="header-basket" (click)="showCart()">
         <i>
           <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg" alt="">
-          <span>1</span>
+          <span> {{ getNumberOfProducts() }} </span>
         </i>
         <div class="basket-price">
-          <b class="card-total-price">77</b>
+          <b class="card-total-price"> {{ total }} </b>
           <span> грн</span>
         </div>
       </div>
@@ -149,3 +149,79 @@
   </nav>
 </header>
 
+<!-- cart -->
+<ng-template  [ngIf]="openCart">
+  <!-- without products -->
+  <ng-container *ngIf="!isProducts">
+    <div class="cart">
+      <div class="cart-popup-out">
+        <div class="cart-items">
+          <div class="cart-empty-message">
+            <div class="cart-empty-img">
+              <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/icons/cart-empty-img.svg" alt="">
+            </div>
+            <div class="title h5">Кошик порожній</div>
+            <a href="#" class="btn btn-primary">Перейти до каталогу</a>
+          </div>
+        </div>
+        <div class="cart-bottom bg-mono">
+          <div class="cart_price-wrap">
+            Сума
+            <b class="card-total-price">0</b>
+            грн
+          </div>
+          <a href="#" class="btn btn-secondary disabled">ОФОРМИТИ ЗАМОВЛЕННЯ</a>
+        </div>
+      </div>
+      <button class="btn-close cart-close">
+        <span></span>
+      </button>
+      <div class="ajax-loader"></div>
+    </div>
+    <div class="cart_bg-layer" (click)="closeCart()"></div>
+  </ng-container>
+
+  <!-- With products -->
+  <ng-container *ngIf="isProducts">
+    <div class="cart" >
+      <div class="cart-popup-out">
+        <div class="cart-items">
+          <div class="prod_horiz cart-product js-product" *ngFor="let product of basket">
+            <a href="#" class="prod_horiz-img">
+              <img [src]="product.imagePath" alt="" class="img">
+            </a>
+            <div class="prod_horiz-desc">
+              <a href="https://monosushi.com.ua/wp-content/uploads/2020/11/1.-filadelfiya-z-lososem-122x50.jpg" class="title"> {{ product.name }} </a>
+              <div class="prod_horiz-controls">
+                <div class="thumb-input-number">
+                  <button class="decrement in-cart">-</button>
+                  <input type="text" class="product-qty" [value]="product.count" readonly>
+                  <button class="increment in-cart">+</button>
+                </div>
+                <div class="price_default">
+                  <b class="price"> {{ product.price * product.count }} </b> грн
+                </div>
+                <button class="btn-close__icon remove-product">
+                  <div class="trash"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-bottom bg-mono">
+          <div class="cart_price-wrap">
+            Сума
+            <b class="card-total-price"> {{ total }} </b>
+            грн
+          </div>
+          <a href="#" class="btn btn-secondary btn-color">ОФОРМИТИ ЗАМОВЛЕННЯ</a>
+        </div>
+      </div>
+      <button class="btn-close cart-close">
+        <span></span>
+      </button>
+      <div class="ajax-loader"></div>
+    </div>
+    <div class="cart_bg-layer" (click)="closeCart()"></div>
+  </ng-container>
+</ng-template>  

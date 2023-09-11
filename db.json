@@ -15,18 +15,90 @@
       "path": "rolls",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=04c13fe3-66aa-46ce-a166-c2496aa64d5c",
       "id": 1
+    },
+    {
+      "name": "Напої",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=20647e96-e4fd-4b54-bdc7-c00bb4de26d6",
+      "id": 3
+    },
+    {
+      "name": "Соуси",
+      "path": "sauces",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Ficon.svg?alt=media&token=dc7f0623-ae70-4b3c-8dcf-0b600dc788b4",
+      "id": 4
+    },
+    {
+      "name": "Сети",
+      "path": "sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=ab41d988-266a-4c4c-a1c4-26a359114048",
+      "id": 5
     }
   ],
   "products": [
     {
-      "category": "Роли",
+      "category": {
+        "name": "Роли",
+        "path": "rolls",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=04c13fe3-66aa-46ce-a166-c2496aa64d5c",
+        "id": 1
+      },
       "name": "Філадельфія з лососем",
-      "ingredients": "Рис, крем, сир, огірок, лосось",
+      "ingredients": "Риc, крем сир, огірок, лосось",
       "weight": "280 г",
-      "price": "174 грн",
+      "price": "277",
       "path": "rolls",
-      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=edd6870a-7623-45e4-a373-8a8145788879",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=698a32cb-27c0-4341-b754-2b8903df8471",
+      "count": 1,
       "id": 1
+    },
+    {
+      "category": {
+        "name": "Сети",
+        "path": "sets",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=ab41d988-266a-4c4c-a1c4-26a359114048",
+        "id": 5
+      },
+      "name": "Сет Філадельфія",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": "1070 г",
+      "price": "1115",
+      "path": "sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fimgonline-com-ua-compressed-jknw6idh54664-scaled.jpg.pagespeed.ce.4A9elt-ybs.jpg?alt=media&token=bbb5c5a1-84c7-41e5-b53d-6344d96c7e54",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "category": {
+        "name": "Напої",
+        "path": "drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=20647e96-e4fd-4b54-bdc7-c00bb4de26d6",
+        "id": 3
+      },
+      "name": "Fanta апельсин",
+      "ingredients": "апельсиновий сік, вітамін С, артезіанську воду",
+      "weight": "0.33 л",
+      "price": "31",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Ffanta-033.jpg.pagespeed.ce.AS23fDMltR.jpg?alt=media&token=73357f82-e5e2-48dc-afcd-8a2e90f82fa8",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": {
+        "name": "Соуси",
+        "path": "sauces",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2Ficon.svg?alt=media&token=dc7f0623-ae70-4b3c-8dcf-0b600dc788b4",
+        "id": 4
+      },
+      "name": "Васабі",
+      "ingredients": "сушений японський хрін у вигляді порошку, лимон,  соняшникова олія",
+      "weight": "25 г",
+      "price": "12",
+      "path": "sauces",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-7b23f.appspot.com/o/images%2F4444.png.pagespeed.ce.eju3nbNNBX.png?alt=media&token=a4204ef6-07d1-44be-95d0-c474f1767b67",
+      "count": 1,
+      "id": 4
     }
   ]
 }

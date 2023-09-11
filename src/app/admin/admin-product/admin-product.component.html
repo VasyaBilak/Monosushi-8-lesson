@@ -1,20 +1,18 @@
-<button type="button" class="btn btn-add btn-upload" (click)="showForm()">
+<button type="button" class="btn btn-add btn-upload" (click)="toggleOpenForm()">
   Додати продукт
 </button>
 
-<div class="row" *ngIf="addForm">
+<div class="row" *ngIf="isOpen">
   <div class="col-6">
     <form [formGroup]="productForm" (ngSubmit)="addProduct()">
-      <div class="mb-3 mt-3 col-12">
-        <input
-          type="text"
-          class="form-control"
-          id="category"
-          name="category"
-          placeholder="*Категорія"
-          formControlName="category"
-        />
+      <div class="mb-3 mt-3 col-12">       
+        <label for="name" class="form-label">Category</label>
+        <select formControlName="category" class="form-select">
+            <option [ngValue]="category" *ngFor="let category of adminCategories">{{category.name}}
+            </option>
+        </select>
       </div>
+      
       <div class="wrapper d-flex">
         <div class="mb-3 mt-3 me-3 col-6 inpWidth">
           <input
@@ -118,7 +116,7 @@
   <tbody>
     <tr *ngFor="let product of adminProducts">
       <td>№ {{ product.id }}</td>
-      <td>{{ product.category }}</td>
+      <td>{{ product.category.name }}</td>
       <th>{{ product.name }}</th>
       <td>{{ product.ingredients }}</td>
       <td>{{ product.weight }}</td>

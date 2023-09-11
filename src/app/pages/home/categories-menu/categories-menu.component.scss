@@ -21,6 +21,10 @@ input, textarea, select {
     padding: 0;
 }
 
+.mr-110 {
+    margin-right: 110px;
+}
+
 .categories-menu {
     display: block;
     margin: 20px 0;
@@ -106,7 +110,6 @@ input, textarea, select {
     padding: 20px;
     -webkit-transition: 0.35s;
     transition: 0.35s;
-    // max-width: 398px;
     min-width: 398px;
     margin-left: auto;
     margin-right: auto;

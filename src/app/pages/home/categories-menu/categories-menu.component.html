@@ -25,13 +25,14 @@
                 </li>
             </ul>
         </div>
+
         <div id="shop-ajax-wrapper" class="mb-3">
             <div class="row product-row filters-row isotop-row">
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="product js-product my-border hover-line">
+                <div class="col-sm-6 col-lg-4 col-xl-3 mr-110" *ngFor="let product of userProducts">
+                    <div class="product js-product my-border hover-line" [routerLink]="[ '/product-category/'+product.category.path, product.id ]">
                         <div class="product_image-wrap">
                             <a href="#" class="product_image">
-                                <img class="img img-default imgLoaded" src="https://monosushi.com.ua/wp-content/uploads/2020/11/1.-filadelfiya-z-lososem.jpg" alt="Філадельфія з лососем">
+                                <img class="img img-default imgLoaded" [src]="product.imagePath" alt="Філадельфія з лососем">
                             </a>
                         </div>
                         <div class="product_title-wrap">
