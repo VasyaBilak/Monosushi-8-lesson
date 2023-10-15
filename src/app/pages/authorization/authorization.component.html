@@ -1,0 +1,15 @@
+<div class="row mb-3 mt-3">
+    <div class="col-4 m-auto">
+        <form [formGroup]="authForm" (ngSubmit)="login()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Email</label>
+                <input formControlName="email" name="email" type="text" class="form-control" id="email">
+              </div>
+            <div class="mb-3">
+                <label for="path" class="form-label">Password</label>
+                <input formControlName="password" name="password" type="password" class="form-control" id="password">
+              </div>
+            <button [disabled]="authForm.invalid" type="submit" class="btn btn-color w-100">Login</button>
+        </form>
+    </div>
+</div>

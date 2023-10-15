@@ -1,0 +1,21 @@
+@import "../../shared/styles/variables";
+
+p {
+    margin-top: 50px;
+}
+
+.btn-exit {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: $primary;
+    width: 100px;
+    margin: 50px auto;
+    border: 2px solid transparent;
+    transition: .35s ease;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $primary;
+    }
+}

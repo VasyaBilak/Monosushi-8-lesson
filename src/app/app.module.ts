@@ -28,6 +28,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { CategoriesMenuComponent } from './pages/home/categories-menu/categories-menu.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { DiscountInfoComponent } from './pages/discount-info/discount-info.component';
+import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { DiscountInfoComponent } from './pages/discount-info/discount-info.compo
     CategoriesMenuComponent,
     ProductInfoComponent,
     DiscountInfoComponent,
+    AuthorizationComponent,
+    CabinetComponent,
   ],
   imports: [
     BrowserModule,

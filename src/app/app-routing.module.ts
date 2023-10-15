@@ -16,6 +16,9 @@ import { ProductInfoComponent } from './pages/product-info/product-info.componen
 import { ProductInfoResolver } from './shared/services/product/product-info.resolver';
 import { DiscountInfoComponent } from './pages/discount-info/discount-info.component';
 import { DiscountInfoResolver } from './shared/services/discount/discount-info.resolver';
+import { AuthGuard } from './shared/guards/auth/auth.guard';
+import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +34,9 @@ const routes: Routes = [
     } },
   { path: 'dostavka-ta-oplata', component: DeliveryPaymentComponent },
   { path: 'about-us', component: AboutComponent },
-  { path: 'admin', component: AdminComponent, children: [
+  { path: 'auth', component: AuthorizationComponent },
+  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
     { path: 'category', component: AdminCategoryComponent },
     { path: 'product', component: AdminProductComponent },
     { path: 'discount', component: AdminDiscountComponent },

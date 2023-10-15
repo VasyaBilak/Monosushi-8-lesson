@@ -130,7 +130,11 @@
           </div>
         </li>
 
-        <li class="header-user hover-line" [routerLink]="['/admin']" routerLinkActive="route-active">
+        <li class="header-user hover-line" [routerLink]="['/auth']" routerLinkActive="route-active" *ngIf="!isLogin">
+          <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
+        </li>
+
+        <li class="header-user hover-line" [routerLink]="[ '/'+loginUrl ]" routerLinkActive="route-active" *ngIf="isLogin">
           <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
         </li>
 
